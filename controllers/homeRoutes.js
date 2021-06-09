@@ -10,12 +10,12 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
 
-        const blogs = blogData.map((blogs) => blogs.get({ plain: true }));
+        const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
         res.render('homepage', {
             blogs,
@@ -32,11 +32,10 @@ router.get('/blog/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'text', 'blog_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -48,7 +47,7 @@ router.get('/blog/:id', async (req, res) => {
         const blogposts = blogData.get({ plain: true });
 
         res.render('blogposts', {
-            ...blogposts,
+            blogposts,
             logged_in: req.session.logged_in
         });
     } catch (err) {

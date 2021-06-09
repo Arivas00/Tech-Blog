@@ -15,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'comment', 'blog_id', 'user_id', 'created_at'],
+                    attributes: ['id', 'text', 'user_id', 'blog_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['name']
@@ -34,3 +34,4 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+

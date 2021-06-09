@@ -1,0 +1,18 @@
+[
+    {
+      "title": "JS",
+      "content": "JavaScript",
+      "user_id": 1
+    },
+    {
+      "title": "HTML",
+      "content": "The HyperText Markup Language.",
+      "user_id": 2
+    },
+    {
+      "title": "CSS",
+      "content": "Cascading Style Sheets.",
+      "user_id": 3
+    }
+  ]
+  

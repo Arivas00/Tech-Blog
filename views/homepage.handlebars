@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Blog Posts</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{#each blogs as |blog|}}
+            <div class="card">
+                <div class="card-body">
+                    <a href="/blog/{{id}}">
+                    <h1 class="card-title">{{blog.title}}</h1>
+                    </a>
+                    <p>Posted by {{user.username}} on {{format_date blog.date_created}}</p>
+                    <hr>
+                    <p class="card-text">{{blog.content}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

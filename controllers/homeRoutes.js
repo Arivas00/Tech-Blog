@@ -44,10 +44,10 @@ router.get('/blog/:id', async (req, res) => {
             ],
         });
 
-        const blogposts = blogData.get({ plain: true });
-
-        res.render('blogposts', {
-            blogposts,
+        const blogpost = blogData.get({ plain: true });
+        console.log(blogpost);
+        res.render('blogpost', {
+            blogpost,
             logged_in: req.session.logged_in
         });
     } catch (err) {

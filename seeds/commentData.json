@@ -1,0 +1,17 @@
+[
+    {
+      "text": "Very versatile language",
+      "user_id": 3,
+      "blog_id": 1
+    },
+    {
+      "text": "The scaffolding for websites.",
+      "user_id": 2,
+      "blog_id": 2
+    },
+    {
+      "text": "The style of websites",
+      "user_id": 1,
+      "blog_id": 3
+    }
+  ]

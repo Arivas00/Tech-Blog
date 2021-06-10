@@ -7,18 +7,14 @@
     </div>
     <div class="row">
         <div class="col">
-            {{#each blogs as |blog|}}
             <div class="card">
                 <div class="card-body">
-                    <a href="/blog/{{id}}">
-                    <h1 class="card-title">{{blog.title}}</h1>
-                    </a>
-                    <p>Posted by {{user.username}} on {{format_date blog.date_created}}</p>
+                    <h1 class="card-title">{{title}}</h1>
+                    <p>Posted by {{user.username}} on {{format_date date_created}}</p>
                     <hr>
-                    <p class="card-text">{{blog.content}}</p>
+                    <p class="card-text">{{content}}</p>
                 </div>
             </div>
-            {{/each}}
         </div>
     </div>
 </div>

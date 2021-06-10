@@ -28,32 +28,25 @@ router.get('/', async (req, res) => {
 
 router.get('/blog/:id', async (req, res) => {
     try {
-        const blogData = await Blog.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
-            ],
-        });
-
-        const blogpost = blogData.get({ plain: true });
-        console.log(blogpost);
-        res.render('blogpost', {
-            blogpost,
-            logged_in: req.session.logged_in
-        });
+      const blogData = await Blog.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+        ],
+      });
+  
+      const blog = blogData.get({ plain: true });
+  
+      res.render('post', {
+        ...blog,
+        logged_in: req.session.logged_in
+      });
     } catch (err) {
-        res.status(500).json(err);
+      res.status(500).json(err);
     }
-});
+  });
 
   router.get('/login', (req, res) => {
     if (req.session.logged_in) {
